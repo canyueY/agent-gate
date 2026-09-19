@@ -1,0 +1,29 @@
+# 构建产物
+build/
+dist/
+*.egg-info/
+src/*.egg-info/
+__pycache__/
+*.py[cod]
+.eggs/
+
+# 锁文件：本仓库是库，不是应用
+uv.lock
+
+# 虚拟环境
+.venv/
+venv/
+
+# 测试 / 缓存
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# 运行时
+_tmp*
+*.log
+.DS_Store
+.vscode/
+.idea/

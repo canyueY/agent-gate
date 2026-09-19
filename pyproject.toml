@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-gate"
+version = "0.1.0"
+description = "给 LLM Agent 的工具调用装一道 fail-closed 权限闸门：风险分级、路径沙箱、调用限额、审计（A fail-closed permission gate for LLM agent tool calls）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-or-later" }
+keywords = [
+    "llm",
+    "agent",
+    "tool-calling",
+    "permissions",
+    "authorization",
+    "sandbox",
+    "guardrails",
+    "ai-safety",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+# 零运行时依赖：纯标准库。
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/canyueY/agent-gate"
+Repository = "https://github.com/canyueY/agent-gate"
+Issues = "https://github.com/canyueY/agent-gate/issues"
+Changelog = "https://github.com/canyueY/agent-gate/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["agent_gate*"]
+
+[tool.setuptools.package-data]
+agent_gate = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
