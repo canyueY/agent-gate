@@ -184,3 +184,8 @@ uv run --python 3.10 --extra dev python -m pytest tests -q
 97 个用例，零外部依赖，无需任何 fixture 就能跑。重点覆盖那些
 "配错了也不会报错、但会让闸门形同虚设"的地方：未知 risk 的归属、
 空 `allowed_roots` 的语义、`..` 穿越与符号链接逃逸、限额的先问后记。
+
+
+---
+
+> **为什么还要开发 Mnemosyne？** [阅读全文 →](WHY_MNEMOSYNE.md)
